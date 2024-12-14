@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --blue:#4A98F7;
+    --white:#fff;
+    --gray:#5A6168;
+    --red:red;
+    --whitemix:#c4c0c0;
+    --black:#000;
+    --green:#6DD400;
+    --buttonclear:#6C757D;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--blue);
+}
+.container{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1050px;
+}
+section{
+    background-color: var(--white);
+    border-radius: 7px; 
+}
+.tools-board{
+    width: 210px;
+    padding: 15px 22px 0;
+}
+.tools-board .row{
+    margin-bottom: 20px;
+}
+.row .options{
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+.row .options .option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+/* where - The :where() pseudo-class is primarily used in CSS to select multiple elements and apply styles to them without increasing specificity. */
+.option :where(span,label){
+    color: var(--gray);
+    cursor: pointer;
+    padding-left: 10px;
+}
+/* :is() is similar but adds the specificity of its selectors. This can cause specificity issues when overriding styles. */
+.option :is(:hover, .active) img {
+    box-shadow: 0 0 5px var(--blue); 
+}
+/* or */
+/* Separate hover and active selectors */
+.option:hover img,
+.option.active img {
+    box-shadow: 0 0 5px var(--blue); /* Adds a shadow around the image */
+}
+.option:hover img,
+.option:hover :where(span, label),
+.option.active img,
+.option.active :where(span, label) {
+    color: var(--blue);
+}
+#fill-color:checked ~ label{
+    color: var(--blue);
+}
+.option #fill-color{
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+}
+.option #size-slider{
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+.color .options{
+    display: flex;
+    justify-content: space-between;
+}
+.color .option{
+    height: 20px;
+    width: 20px;
+    background-color: var(--red);
+    border-radius: 60%;
+    margin-top: 3px;
+    position: relative;
+    cursor: pointer;
+}
+.color .option:nth-child(1){
+    background-color: var(--white);
+    border: 10px solid var(--whitemix);
+}
+.color .option:nth-child(2){
+    background-color: var(--black);
+}
+.color .option:nth-child(3){
+    background-color: var(--red);
+}
+.color .option:nth-child(4){
+    background-color: var(--green);
+}
+.color .option:nth-child(5){
+    background-color: var(--blue);
+}
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+.color .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid var(--white);
+    transform: translate(-50%,-50%);
+}
+.color .option:hover::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid var(--white);
+    transform: translate(-50%,-50%);
+}
+.color .option:first-child.selected::before{
+    background-color: #ccc;
+}
+.button button{
+    width: 70px;
+    margin-right: 7px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--white);
+    padding: 2px;
+    border-radius: 5px;
+}
+.button .clear{
+    color: var(--buttonclear);
+    border: 1px solid var(--buttonclear);
+    transition: all 0.3s ease;
+}
+.button .clear:hover{
+    color: var(--white);
+    background-color: var(--buttonclear);
+}
+.button .save{
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+}
+.drawing-board{
+    flex: 1;
+}
+.drawing-board canvas{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media (max-width: 480px) {
+    body {
+        flex-direction: column; 
+        padding: 0;
+    }
+
+    .container {
+        flex-direction: column; 
+        gap: 0;
+    }
+
+    .tools-board {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        padding: 0; 
+        background-color: var(--white);
+        border-radius: 0 0 5px 5px; 
+        overflow-x: auto; 
+    }
+
+    .tools-board .row .option #size-slider {
+        width: 100%;
+        margin: 0;
+        max-width: 100px; 
+    }
+    
+
+    .tools-board .row {
+        flex: none;
+        display: flex;
+        gap: 0; 
+        align-items: center;
+    }
+
+    .tools-board .row .title{
+        margin-top: 9px;
+        margin-left: 25px;
+    }
+
+    .tools-board .options {
+        display: flex;
+        gap: 0; 
+        padding: 0; 
+    }
+
+    .tools-board .options .option {
+        flex: none;
+        width: 20px; 
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        margin: 2.5px; 
+        padding: 0; 
+    }
+    
+
+    .tools-board .options .option img {
+        width: 100%;
+        height: 100%;
+        display: block; /* Ensure image takes up the full space */
+    }
+
+    .tools-board .options .option span,
+    .tools-board .options .option label {
+        display: none; /* Hide name by default */
+    }
+
+    /* Show name when hovering over the tool */
+    .tools-board .options .option:hover span,
+    .tools-board .options .option:hover label {
+        display: block; /* Show name */
+        position: absolute;
+        bottom: -20px;
+        background: var(--gray);
+        color: var(--white);
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 12px;
+        white-space: nowrap;
+        z-index: 10;
+    }
+
+    /* Shapes label below the tools */
+    .tools-board .options .option label {
+        position: absolute;
+        bottom: -20px;
+        font-size: 12px;
+        color: var(--gray);
+        margin: 0;
+        padding: 0;
+    }
+
+    .drawing-board {
+        flex: 1;
+        height: 85vh; 
+        width: 100%;
+        background: var(--white);
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .button-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px; 
+        margin-top: 10px; 
+    }
+
+    .button-row button {
+        width: 45%;
+        padding: 6px 0; 
+        border-radius: 5px;
+        text-align: center;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .button .clear {
+        background-color: var(--buttonclear);
+        color: var(--white);
+        border: 1px solid var(--buttonclear);
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    .button .clear:hover {
+        background-color: var(--white);
+        color: var(--buttonclear);
+    }
+
+    .button .save {
+        background-color: var(--blue);
+        color: var(--white);
+        border: 1px solid var(--blue);
+        margin-top: 20px;
+    }
+
+    .button .save:hover {
+        background-color: var(--white);
+        color: var(--blue);
+    }
+}
