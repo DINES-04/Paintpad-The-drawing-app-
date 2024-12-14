@@ -16,11 +16,11 @@ Welcome to **PaintPad**, a fully responsive and feature-rich drawing website des
 
 ### Desktop
 1. Open your preferred browser.
-2. Visit the PaintPad website at [https://paintpad.netlify.app](#)
+2. Visit the PaintPad website at [https://paintpad.netlify.app/](#)
 
 ### Mobile
 1. Open your mobile browser.
-2. Navigate to [https://paintpad.netlify.app ](#)
+2. Navigate to [https://paintpad.netlify.app/](#)
 3. Enjoy a fully responsive drawing experience tailored for your device.
 
 ## How to Use
