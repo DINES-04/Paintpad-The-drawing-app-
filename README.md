@@ -2,6 +2,11 @@
 
 Welcome to **PaintPad**, a fully responsive and feature-rich drawing website designed for artists of all skill levels. Whether you're sketching, painting, or creating detailed illustrations, PaintPad adapts seamlessly to desktop and mobile devices, offering a smooth and intuitive experience.
 
+## Pre-view
+![image](https://github.com/user-attachments/assets/ba6bb446-f9bf-4807-a6dc-3f2bedc13b74)
+![image](https://github.com/user-attachments/assets/9198b89f-d709-4e5c-beb2-3d1ca3e9faa8)
+
+
 ## Features
 
 - **Customizable Brushes**: Choose from a variety of brushes and customize their size, opacity, and texture.
@@ -48,10 +53,6 @@ We welcome contributions from the community! If you have suggestions, find bugs,
 ## Support
 
 For help or troubleshooting, please visit our [support page](#) or contact us at **support@paintpad.com**.
-
-## License
-
-PaintPad is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the software in compliance with the license.
 
 ---
 
