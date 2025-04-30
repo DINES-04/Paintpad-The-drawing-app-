@@ -49,11 +49,7 @@ We welcome contributions from the community! If you have suggestions, find bugs,
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
 3. Submit a pull request with a detailed explanation.
-
-## Support
-
-For help or troubleshooting, please visit our [support page](#) or contact us at **support@paintpad.com**.
-
+   
 ---
 
 Thank you for using PaintPad! We can't wait to see what you create. 🎨
